@@ -1,1 +1,2462 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stratos Papaporfyriou | Personal Trainer 40+</title>
+
+<meta name="description" content="Personal Trainer για άντρες 40+. Χάσε έως 10 κιλά σε 90 ημέρες με δομημένο, μετρήσιμο πλάνο 1-1.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&family=Spectral:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root{
+    --bg:#0D110F;
+    --bg-soft:#121814;
+    --surface:#171E19;
+    --surface-2:#202A22;
+
+    --line:#2B352D;
+
+    --text:#EEF3EC;
+    --muted:#96A39A;
+    --muted-dark:#667269;
+
+    --accent:#B5F23C;
+    --accent-light:#D0FF70;
+
+    --accent-dark:#587B1C;
+
+    --max-width:1180px;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    background:
+    radial-gradient(
+        900px 500px at 80% -10%,
+        rgba(181,242,60,.14),
+        transparent 60%
+    ),
+    var(--bg);
+
+    color:var(--text);
+
+    font-family:'Manrope',sans-serif;
+
+    line-height:1.6;
+
+    overflow-x:hidden;
+}
+
+
+body:before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.04;
+
+    background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+}
+
+
+.container{
+
+    width:min(var(--max-width),100%);
+
+    margin:auto;
+
+    padding:0 28px;
+
+}
+
+
+
+h1,h2,h3{
+
+    font-family:'Archivo',sans-serif;
+
+    line-height:1.05;
+
+    letter-spacing:-.03em;
+
+}
+
+
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+
+.accent{
+
+    color:var(--accent);
+
+}
+
+
+
+.eyebrow{
+
+    display:inline-block;
+
+    font-family:'Archivo',sans-serif;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    color:var(--accent);
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* =====================
+NAV
+===================== */
+
+
+nav{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:50;
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(13,17,15,.72);
+
+    border-bottom:1px solid var(--line);
+
+}
+
+
+
+.nav-inner{
+
+    height:76px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+
+.logo{
+
+    font-family:'Archivo';
+
+    font-weight:900;
+
+    font-size:1rem;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.logo span{
+
+    color:var(--accent);
+
+}
+
+
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:32px;
+
+}
+
+
+
+.nav-links a{
+
+    color:var(--muted);
+
+    font-size:.92rem;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+
+
+.nav-links a:hover{
+
+    color:var(--text);
+
+}
+
+
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:15px 26px;
+
+    border-radius:999px;
+
+    font-family:'Archivo';
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+
+
+.btn-primary{
+
+    background:var(--accent);
+
+    color:#10150A;
+
+    box-shadow:0 15px 40px -15px rgba(181,242,60,.7);
+
+}
+
+
+
+.btn-primary:hover{
+
+    background:var(--accent-light);
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.btn-outline{
+
+    border:1px solid var(--line);
+
+}
+
+
+
+.btn-outline:hover{
+
+    border-color:var(--accent);
+
+    color:var(--accent);
+
+}
+
+
+
+.nav-btn{
+
+    padding:11px 22px;
+
+}
+
+
+
+@media(max-width:800px){
+
+    .nav-links a:not(.nav-btn){
+
+        display:none;
+
+    }
+
+}
+
+
+
+
+
+/* =====================
+HERO
+===================== */
+
+
+.hero{
+
+    padding:90px 0 100px;
+
+}
+
+
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr .85fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+
+.hero h1{
+
+    font-size:clamp(3rem,6vw,5rem);
+
+    text-transform:uppercase;
+
+    font-weight:900;
+
+}
+
+
+
+.hero-description{
+
+    margin-top:28px;
+
+    max-width:520px;
+
+}
+
+
+
+.hero-description strong{
+
+    color:var(--text);
+
+}
+
+
+
+.hero-sub{
+
+    font-family:'Spectral',serif;
+
+    font-size:1.35rem;
+
+    color:var(--muted);
+
+    margin-bottom:18px;
+
+}
+
+
+
+.hero-text{
+
+    color:var(--muted);
+
+    font-size:1.05rem;
+
+}
+
+
+
+.hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin-top:34px;
+
+}
+
+
+
+.hero-proof{
+
+    display:flex;
+
+    gap:40px;
+
+    margin-top:45px;
+
+    padding-top:28px;
+
+    border-top:1px solid var(--line);
+
+}
+
+
+
+.proof-item b{
+
+    display:block;
+
+    font-family:'Archivo';
+
+    font-size:1.8rem;
+
+}
+
+
+
+.proof-item span{
+
+    color:var(--muted-dark);
+
+    text-transform:uppercase;
+
+    font-size:.75rem;
+
+    letter-spacing:.12em;
+
+}
+
+
+
+.hero-image{
+
+    position:relative;
+
+}
+
+
+
+.hero-image:before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-18px;
+
+    border:1px solid var(--accent);
+
+    border-radius:26px;
+
+    opacity:.35;
+
+}
+
+
+
+.hero-image img{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    display:block;
+
+    background:var(--surface);
+
+}
+
+
+
+.hero-badge{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:-25px;
+
+    background:var(--surface);
+
+    border:1px solid var(--line);
+
+    padding:18px 22px;
+
+    border-radius:16px;
+
+}
+
+
+
+.hero-badge strong{
+
+    display:block;
+
+    font-family:'Archivo';
+
+    font-size:1.5rem;
+
+    color:var(--accent);
+
+}
+
+
+
+.hero-badge span{
+
+    color:var(--muted);
+
+    font-size:.8rem;
+
+    text-transform:uppercase;
+
+}
+
+
+
+@media(max-width:900px){
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .hero-image{
+
+        max-width:430px;
+
+        margin:auto;
+
+    }
+
+
+    .hero-badge{
+
+        left:10px;
+
+    }
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="container nav-inner">
+
+
+<div class="logo">
+STRATOS <span>PAPAPORFYRIOU</span>
+</div>
+
+
+<div class="nav-links">
+
+<a href="#method">
+Πώς δουλεύω
+</a>
+
+
+<a href="#results">
+Αποτελέσματα
+</a>
+
+
+<a href="#about">
+Ποιος είμαι
+</a>
+
+
+<a class="btn btn-primary nav-btn" href="#contact">
+WhatsApp
+</a>
+
+
+</div>
+
+
+</div>
+
+</nav>
+
+
+
+
+
+<!-- HERO -->
+
+
+<header class="hero">
+
+
+<div class="container hero-grid">
+
+
+
+<div>
+
+
+<span class="eyebrow">
+Personal Training · Άντρες 40+
+</span>
+
+
+
+<h1>
+
+Χάσε έως
+
+<span class="accent">
+10
+</span>
+
+κιλά
+
+<br>
+
+σε
+
+<span class="accent">
+90
+</span>
+
+μέρες
+
+
+</h1>
+
+
+
+<div class="hero-description">
+
+
+<p class="hero-sub">
+
+Για άντρες 40+ που θέλουν αποτέλεσμα χωρίς χαοτικά προγράμματα.
+
+</p>
+
+
+
+<p class="hero-text">
+
+Δομημένο, μετρήσιμο 1-1 πλάνο. 
+Ξέρεις ακριβώς τι κάνεις κάθε εβδομάδα και έχεις συνεχή καθοδήγηση μέχρι το αποτέλεσμα.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="hero-actions">
+
+
+<a class="btn btn-primary" href="#contact">
+
+Ξεκίνα τη μεταμόρφωση
+
+</a>
+
+
+<a class="btn btn-outline" href="#about">
+
+Γνώρισε τον Στράτο
+
+</a>
+
+
+</div>
+
+
+
+
+
+<div class="hero-proof">
+
+
+<div class="proof-item">
+
+<b>9.400+</b>
+
+<span>
+LinkedIn followers
+</span>
+
+</div>
+
+
+
+<div class="proof-item">
+
+<b>40+</b>
+
+<span>
+Εξειδίκευση
+</span>
+
+</div>
+
+
+
+
+<div class="proof-item">
+
+<b>90</b>
+
+<span>
+Ημέρες πλάνου
+</span>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="hero-image">
+
+
+<img src="images/stratos.jpg" alt="Stratos Papaporfyriou Personal Trainer">
+
+
+
+<div class="hero-badge">
+
+<strong>
+90 DAYS
+</strong>
+
+<span>
+Transformation System
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</header>
+
+
+<!-- =====================
+PROBLEM SECTION
+===================== -->
+
+
+<section class="problem-section">
+
+
+<div class="container">
+
+
+<span class="eyebrow">
+Γιατί τώρα
+</span>
+
+
+<h2>
+
+Το πρόβλημα δεν είναι ότι
+<span class="accent">δεν προσπαθείς.</span>
+
+</h2>
+
+
+<p class="problem-big">
+
+Το πρόβλημα είναι ότι μετά τα 40 χρειάζεσαι διαφορετική στρατηγική.
+
+</p>
+
+
+<p class="problem-text">
+
+Οι παλιές μέθοδοι, οι τυχαίες δίαιτες και τα προγράμματα χωρίς καθοδήγηση
+δεν είναι σχεδιασμένα για έναν άνθρωπο με δουλειά, υποχρεώσεις και περιορισμένο χρόνο.
+
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- =====================
+METHOD
+===================== -->
+
+
+<section id="method" class="method">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+
+<span class="eyebrow">
+Το σύστημα
+</span>
+
+
+<h2>
+
+Το
+<span class="accent">1-90-180</span>
+Framework
+
+</h2>
+
+
+<p>
+
+Ένα δομημένο σύστημα που μετατρέπει τον στόχο σου σε καθημερινές ενέργειες.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="timeline">
+
+
+
+<div class="timeline-item">
+
+
+<div class="timeline-number">
+01
+</div>
+
+
+<div class="timeline-content">
+
+
+<h3>
+Ημέρα 1 — Διάγνωση
+</h3>
+
+
+<p>
+
+Αξιολόγηση σώματος, φυσικής κατάστασης και τρόπου ζωής.
+Δημιουργούμε τη σωστή αφετηρία.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="timeline-item">
+
+
+<div class="timeline-number">
+90
+</div>
+
+
+<div class="timeline-content">
+
+
+<h3>
+90 ημέρες — Μεταμόρφωση
+</h3>
+
+
+<p>
+
+Ένα ξεκάθαρο πλάνο προπόνησης και καθοδήγησης.
+Ξέρεις τι κάνεις κάθε μέρα χωρίς αμφιβολίες.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="timeline-item">
+
+
+<div class="timeline-number">
+180
+</div>
+
+
+<div class="timeline-content">
+
+
+<h3>
+180 ημέρες — Σταθερό αποτέλεσμα
+</h3>
+
+
+<p>
+
+Ο στόχος δεν είναι απλά να χάσεις κιλά.
+Είναι να δημιουργήσεις τρόπο ζωής που μπορείς να κρατήσεις.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- =====================
+RESULTS
+===================== -->
+
+
+<section id="results" class="results">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+
+<span class="eyebrow">
+Μετρήσιμη πρόοδος
+</span>
+
+
+<h2>
+
+Τι μπορείς να περιμένεις
+
+</h2>
+
+
+<p>
+
+Καθαρά milestones χωρίς υποσχέσεις τύπου "μαγικής λύσης".
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="results-grid">
+
+
+
+<div class="result-card">
+
+<span>
+1ος Μήνας
+</span>
+
+
+<strong>
+-3 / -4kg
+</strong>
+
+
+<p>
+Το σώμα μπαίνει σε νέο ρυθμό.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="result-card">
+
+<span>
+2ος Μήνας
+</span>
+
+
+<strong>
+-7 / -8kg
+</strong>
+
+
+<p>
+Οι αλλαγές γίνονται ορατές.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="result-card">
+
+<span>
+3ος Μήνας
+</span>
+
+
+<strong>
+-10kg+
+</strong>
+
+
+<p>
+Νέα εικόνα και νέα αυτοπεποίθηση.
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =====================
+FIT / NOT FIT
+===================== -->
+
+
+<section class="fit">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span class="eyebrow">
+Για ποιον είναι
+</span>
+
+
+<h2>
+
+Δεν είναι για όλους.
+
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="fit-grid">
+
+
+
+<div class="fit-box">
+
+
+<h3>
+✓ Είναι για σένα αν...
+</h3>
+
+
+
+<ul>
+
+
+<li>
+Είσαι άντρας 40+ και νιώθεις ότι το σώμα σου έχει αλλάξει.
+</li>
+
+
+<li>
+Θέλεις συγκεκριμένο πλάνο και όχι τυχαίες συμβουλές.
+</li>
+
+
+<li>
+Είσαι έτοιμος να επενδύσεις στον εαυτό σου.
+</li>
+
+
+<li>
+Θέλεις κάποιον να σε κρατά accountable.
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="fit-box muted-box">
+
+
+<h3>
+✕ Δεν είναι για σένα αν...
+</h3>
+
+
+
+<ul>
+
+
+<li>
+Ψάχνεις γρήγορη λύση χωρίς προσπάθεια.
+</li>
+
+
+<li>
+Θέλεις το φθηνότερο πρόγραμμα.
+</li>
+
+
+<li>
+Δεν είσαι έτοιμος να ακολουθήσεις διαδικασία.
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =====================
+TESTIMONIALS
+===================== -->
+
+
+<section class="testimonials">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+
+<span class="eyebrow">
+Αποτελέσματα πελατών
+</span>
+
+
+<h2>
+
+Πραγματικές αλλαγές.
+
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="testimonial-grid">
+
+
+
+
+
+<div class="testimonial">
+
+
+<p>
+
+"Το μεγαλύτερο αποτέλεσμα δεν ήταν μόνο τα κιλά.
+Ήταν ότι ξαναβρήκα ενέργεια και αυτοπεποίθηση."
+
+</p>
+
+
+<div class="person">
+
+
+<img src="images/client-01.jpg" alt="Client">
+
+
+<div>
+
+<strong>
+Όνομα Πελάτη
+</strong>
+
+<span>
+-10 κιλά σε 90 ημέρες
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="testimonial">
+
+
+<p>
+
+"Για πρώτη φορά είχα πρόγραμμα που μπορούσα πραγματικά να ακολουθήσω."
+
+</p>
+
+
+<div class="person">
+
+
+<img src="images/client-02.jpg" alt="Client">
+
+
+<div>
+
+<strong>
+Όνομα Πελάτη
+</strong>
+
+<span>
+Transformation
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="testimonial">
+
+
+<p>
+
+"Δεν ήταν άλλη μια δίαιτα.
+Ήταν ένα σύστημα που μου έδειξε τι λειτουργεί."
+
+</p>
+
+
+<div class="person">
+
+
+<img src="images/client-03.jpg" alt="Client">
+
+
+<div>
+
+<strong>
+Όνομα Πελάτη
+</strong>
+
+<span>
+12 εβδομάδες
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =====================
+ABOUT
+===================== -->
+
+
+<section id="about" class="about">
+
+
+<div class="container about-grid">
+
+
+
+<div>
+
+
+<img class="about-image"
+src="images/stratos-about.jpg"
+alt="Stratos Papaporfyriou">
+
+
+</div>
+
+
+
+
+<div>
+
+
+<span class="eyebrow">
+Ποιος είμαι
+</span>
+
+
+<h2>
+
+Stratos Papaporfyriou
+
+</h2>
+
+
+<p>
+
+Personal Trainer με εξειδίκευση στους άντρες 40+.
+Βοηθάω ανθρώπους που έχουν δοκιμάσει διαφορετικές λύσεις να αποκτήσουν ξανά έλεγχο στο σώμα τους.
+
+</p>
+
+
+
+<p>
+
+Η προσέγγισή μου είναι απλή:
+διάγνωση, συγκεκριμένο πλάνο και σταθερή καθοδήγηση μέχρι το αποτέλεσμα.
+
+</p>
+
+
+
+
+<div class="credentials">
+
+
+<span>
+Posture & Fat Loss Specialist
+</span>
+
+
+<span>
+Certified Personal Trainer
+</span>
+
+
+<span>
+ATEI Larissa
+</span>
+
+
+<span>
+Wellness Show Host
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+<style>
+
+/* =====================
+GLOBAL SECTIONS
+===================== */
+
+
+section{
+    padding:110px 0;
+}
+
+
+
+.section-title{
+
+    max-width:650px;
+
+    margin-bottom:65px;
+
+}
+
+
+.section-title h2{
+
+    font-size:clamp(2.2rem,4vw,3.4rem);
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+
+.section-title p{
+
+    color:var(--muted);
+
+    font-family:'Spectral',serif;
+
+    font-size:1.2rem;
+
+}
+
+
+
+/* =====================
+PROBLEM
+===================== */
+
+
+.problem-section{
+
+    background:var(--bg-soft);
+
+}
+
+
+
+.problem-section h2{
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    max-width:700px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.problem-big{
+
+    font-family:'Spectral',serif;
+
+    font-size:clamp(2rem,4vw,3.2rem);
+
+    line-height:1.35;
+
+    max-width:800px;
+
+    margin:40px 0;
+
+}
+
+
+
+.problem-text{
+
+    color:var(--muted);
+
+    max-width:600px;
+
+    font-size:1.15rem;
+
+}
+
+
+
+
+
+/* =====================
+TIMELINE
+===================== */
+
+
+.method{
+
+    background:var(--bg);
+
+}
+
+
+
+.timeline{
+
+    position:relative;
+
+    max-width:900px;
+
+}
+
+
+
+.timeline:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:45px;
+
+    top:0;
+
+    bottom:0;
+
+    width:1px;
+
+    background:var(--line);
+
+}
+
+
+
+.timeline-item{
+
+    display:grid;
+
+    grid-template-columns:100px 1fr;
+
+    gap:35px;
+
+    margin-bottom:70px;
+
+    position:relative;
+
+}
+
+
+
+.timeline-number{
+
+    font-family:'Archivo';
+
+    font-size:3.8rem;
+
+    font-weight:900;
+
+    color:var(--accent);
+
+}
+
+
+
+.timeline-content{
+
+    background:var(--surface);
+
+    border:1px solid var(--line);
+
+    border-radius:22px;
+
+    padding:35px;
+
+}
+
+
+
+.timeline-content h3{
+
+    font-size:1.5rem;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.timeline-content p{
+
+    color:var(--muted);
+
+}
+
+
+
+
+
+/* =====================
+RESULTS
+===================== */
+
+
+.results{
+
+    background:var(--bg-soft);
+
+}
+
+
+
+.results-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.result-card{
+
+    background:var(--surface);
+
+    border:1px solid var(--line);
+
+    border-radius:22px;
+
+    padding:40px 30px;
+
+}
+
+
+
+.result-card span{
+
+    color:var(--muted);
+
+    text-transform:uppercase;
+
+    letter-spacing:.15em;
+
+    font-size:.75rem;
+
+}
+
+
+
+.result-card strong{
+
+    display:block;
+
+    font-family:'Archivo';
+
+    font-size:3rem;
+
+    color:var(--accent);
+
+    margin:20px 0;
+
+}
+
+
+
+.result-card p{
+
+    color:var(--muted);
+
+}
+
+
+
+
+
+/* =====================
+FIT
+===================== */
+
+
+.fit-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+}
+
+
+
+.fit-box{
+
+    padding:40px;
+
+    background:var(--surface);
+
+    border:1px solid var(--line);
+
+    border-radius:22px;
+
+}
+
+
+
+.fit-box h3{
+
+    margin-bottom:25px;
+
+    font-size:1.3rem;
+
+}
+
+
+
+.fit-box ul{
+
+    list-style:none;
+
+}
+
+
+
+.fit-box li{
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--line);
+
+    color:var(--text);
+
+}
+
+
+
+.fit-box li:last-child{
+
+    border-bottom:none;
+
+}
+
+
+
+.muted-box{
+
+    background:transparent;
+
+}
+
+
+
+
+
+/* =====================
+TESTIMONIALS
+===================== */
+
+
+.testimonials{
+
+    background:var(--bg-soft);
+
+}
+
+
+
+.testimonial-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.testimonial{
+
+    background:var(--surface);
+
+    border:1px solid var(--line);
+
+    border-radius:22px;
+
+    padding:32px;
+
+}
+
+
+
+.testimonial p{
+
+    font-family:'Spectral',serif;
+
+    font-size:1.15rem;
+
+    line-height:1.6;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.person{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+
+.person img{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+
+.person strong{
+
+    display:block;
+
+    font-family:'Archivo';
+
+}
+
+
+
+.person span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:.85rem;
+
+}
+
+
+
+
+
+/* =====================
+ABOUT
+===================== */
+
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:.85fr 1.15fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+
+.about-image{
+
+    width:100%;
+
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+}
+
+
+
+.about h2{
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.about p{
+
+    color:var(--muted);
+
+    font-family:'Spectral',serif;
+
+    font-size:1.15rem;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.credentials{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+
+
+.credentials span{
+
+    border:1px solid var(--line);
+
+    background:var(--surface);
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+}
+
+
+
+/* =====================
+FINAL CTA
+===================== */
+
+
+.cta-section{
+
+    padding:120px 0;
+
+}
+
+
+
+.cta-box{
+
+    background:
+
+    radial-gradient(
+        500px 250px at center,
+        rgba(181,242,60,.15),
+        transparent
+    ),
+    var(--surface);
+
+    border:1px solid var(--line);
+
+    border-radius:30px;
+
+    padding:80px 40px;
+
+    text-align:center;
+
+}
+
+
+
+.cta-box h2{
+
+    font-size:clamp(2rem,5vw,3.5rem);
+
+    text-transform:uppercase;
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+
+
+.cta-box p{
+
+    color:var(--muted);
+
+    max-width:500px;
+
+    margin:25px auto;
+
+}
+
+
+
+.cta-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+/* =====================
+FOOTER
+===================== */
+
+
+footer{
+
+    border-top:1px solid var(--line);
+
+    padding:45px 0;
+
+}
+
+
+
+.footer-inner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+.footer-inner span{
+
+    color:var(--muted);
+
+    font-size:.9rem;
+
+}
+
+
+
+/* =====================
+ANIMATION
+===================== */
+
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:.8s cubic-bezier(.2,.7,.2,1);
+
+}
+
+
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+
+.results-grid,
+.testimonial-grid,
+.fit-grid,
+.about-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.timeline-item{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.timeline:before{
+
+    display:none;
+
+}
+
+
+.footer-inner{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+
+
+
+<!-- =====================
+FINAL CTA
+===================== -->
+
+
+<section id="contact" class="cta-section">
+
+
+<div class="container">
+
+
+<div class="cta-box">
+
+
+<span class="eyebrow">
+Ξεκίνα τώρα
+</span>
+
+
+<h2>
+
+Έτοιμος να αλλάξεις το σώμα σου;
+
+</h2>
+
+
+<p>
+
+Στείλε μου μήνυμα και θα δούμε αν το πρόγραμμα ταιριάζει στους στόχους σου.
+
+</p>
+
+
+
+<div class="cta-actions">
+
+
+<a class="btn btn-primary whatsapp"
+href="#">
+
+Μίλα μαζί μου στο WhatsApp
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- =====================
+FOOTER
+===================== -->
+
+
+<footer>
+
+
+<div class="container footer-inner">
+
+
+<div class="logo">
+
+STRATOS <span>PAPAPORFYRIOU</span>
+
+</div>
+
+
+<span>
+
+Personal Trainer · Greece
+
+</span>
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+<script>
+
+
+// WhatsApp
+
+const whatsappNumber="306900000000";
+
+const message=
+"Γεια σου Στράτο! Είδα το site σου και θέλω περισσότερες πληροφορίες για το πρόγραμμα 90 ημερών.";
+
+
+const whatsappURL=
+"https://wa.me/"
++ whatsappNumber
++"?text="
++encodeURIComponent(message);
+
+
+
+document.querySelectorAll(".whatsapp").forEach(btn=>{
+
+btn.href=whatsappURL;
+
+});
+
+
+
+
+
+// Scroll reveal
+
+
+const observer =
+new IntersectionObserver(entries=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("active");
+
+}
+
+
+});
+
+
+},{threshold:.15});
+
+
+
+document.querySelectorAll(
+".timeline-item,.result-card,.testimonial,.fit-box,.about-grid,.cta-box"
+)
+.forEach(el=>{
+
+el.classList.add("reveal");
+
+observer.observe(el);
+
+});
+
+
+
+</script>
+
+
+</body>
+
+</html>
 
