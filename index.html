@@ -190,7 +190,20 @@ section{padding:88px 0;position:relative}
   background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:34px 28px;
   position:relative;overflow:hidden;transition:border-color .25s, transform .25s;
 }
-.fw-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+
+.fw-card{
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.fw-card:hover{
+  transform:translateY(-8px);
+  border-color:var(--accent);
+  box-shadow:0 22px 40px rgba(0,0,0,.28);
+}
+  
 .fw-num{font-family:'Archivo';font-weight:900;font-size:3.4rem;color:var(--accent-deep);line-height:1;opacity:.55}
 .fw-card h3{font-size:1.25rem;font-weight:800;margin:14px 0 10px}
 .fw-card p{color:var(--muted);font-size:.98rem}
