@@ -200,6 +200,35 @@ img.avatar{object-fit:cover}
 .tst .person span{display:block;color:var(--muted-2);font-size:.82rem;font-weight:500}
 @media(max-width:880px){.tst-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.tst-grid{grid-template-columns:1fr}}
+  .linkedin-strip{
+    margin-bottom:30px;
+    padding:18px 22px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:var(--surface);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.linkedin-strip span{
+    color:var(--muted);
+    font-size:.95rem;
+}
+
+.linkedin-strip a{
+    color:#0A66C2;
+    text-decoration:none;
+    font-family:'Archivo',sans-serif;
+    font-weight:700;
+}
+
+.linkedin-strip a:hover{
+    text-decoration:underline;
+}
 
 /* ---------- ABOUT ---------- */
 .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}
@@ -377,19 +406,40 @@ footer{border-top:1px solid var(--line);padding:46px 0 56px;color:var(--muted-2)
 <section class="alt">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Αποδείξεις</span>
-      <h2>Τι λένε οι ασκούμενοί μου</h2>
-    </div>
+  <span class="eyebrow">Verified LinkedIn Recommendations</span>
+  <h2>Τι λένε οι άνθρωποι που συνεργάστηκαν μαζί μου</h2>
+</div>
+    <div class="linkedin-strip reveal">
+  <span>
+    ✓ Όλες οι παρακάτω κριτικές είναι δημόσιες συστάσεις από το LinkedIn.
+  </span>
+
+  <a href="https://www.linkedin.com/in/stratos-papaporfyriou-bb326b244/details/recommendations/?detailScreenTabIndex=0"
+     target="_blank"
+     rel="noopener">
+     Δες όλες →
+  </a>
+</div>
     <div class="tst-grid">
 
       <!-- TESTIMONIAL 1 -->
       <div class="tst reveal">
+
+<a href="https://www.linkedin.com/in/stratos-papaporfyriou-bb326b244/details/recommendations/?detailScreenTabIndex=0"
+target="_blank"
+rel="noopener"
+style="display:block;color:inherit;text-decoration:none;height:100%;">
         <p class="quote">[ Κείμενο testimonial #1 — η εμπειρία του πελάτη με δικά του λόγια. ]</p>
         <div class="person">
           <!-- ΦΩΤΟ: <img class="avatar" src="pelatis1.jpg" alt=""> · αλλιώς μένουν τα αρχικά -->
           <img class="avatar" src="images/client-01.jpg" alt="Όνομα Πελάτη">
           <div><b>[ Ιωάννης Περπινιάς ]</b><span>[ −Χ κιλά σε Χ μήνες ]</span></div>
         </div>
+  <div style="margin-top:18px;color:#0A66C2;font-weight:700;font-size:.85rem;">
+LinkedIn Recommendation →
+</div>
+
+</a>
       </div>
 
       <!-- TESTIMONIAL 2 -->
