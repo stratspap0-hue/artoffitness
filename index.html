@@ -664,38 +664,46 @@ const acceptCookies = document.getElementById("accept-cookies");
 const rejectCookies = document.getElementById("reject-cookies");
 
 function updateAnalyticsConsent(value) {
-  gtag("consent", "update", {
-    analytics_storage: value,
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied"
-  });
+  if (typeof gtag === "function") {
+    gtag("consent", "update", {
+      analytics_storage: value,
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied"
+    });
+  }
 }
 
 function saveCookieChoice(choice) {
   localStorage.setItem(COOKIE_CONSENT_KEY, choice);
-  cookieBanner.hidden = true;
+
+  if (cookieBanner) {
+    cookieBanner.hidden = true;
+  }
 }
 
-const savedCookieChoice = localStorage.getItem(COOKIE_CONSENT_KEY);
+if (cookieBanner && acceptCookies && rejectCookies) {
+  const savedCookieChoice =
+    localStorage.getItem(COOKIE_CONSENT_KEY);
 
-if (savedCookieChoice === "accepted") {
-  updateAnalyticsConsent("granted");
-} else if (savedCookieChoice === "rejected") {
-  updateAnalyticsConsent("denied");
-} else {
-  cookieBanner.hidden = false;
+  if (savedCookieChoice === "accepted") {
+    updateAnalyticsConsent("granted");
+  } else if (savedCookieChoice === "rejected") {
+    updateAnalyticsConsent("denied");
+  } else {
+    cookieBanner.hidden = false;
+  }
+
+  acceptCookies.addEventListener("click", function () {
+    updateAnalyticsConsent("granted");
+    saveCookieChoice("accepted");
+  });
+
+  rejectCookies.addEventListener("click", function () {
+    updateAnalyticsConsent("denied");
+    saveCookieChoice("rejected");
+  });
 }
-
-acceptCookies.addEventListener("click", () => {
-  updateAnalyticsConsent("granted");
-  saveCookieChoice("accepted");
-});
-
-rejectCookies.addEventListener("click", () => {
-  updateAnalyticsConsent("denied");
-  saveCookieChoice("rejected");
-});
 
 
 
