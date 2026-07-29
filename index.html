@@ -203,6 +203,79 @@ footer{border-top:1px solid var(--line);padding:46px 0 56px;color:var(--muted-2)
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+
+.cookie-banner {
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  max-width: 1050px;
+  margin: auto;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, .5);
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-text strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "Archivo", sans-serif;
+}
+
+.cookie-text p {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+.cookie-text a {
+  color: var(--accent);
+}
+
+.cookie-buttons {
+  display: flex;
+  flex: none;
+  gap: 10px;
+}
+
+.cookie-buttons .btn {
+  padding: 11px 18px;
+  font-size: .85rem;
+}
+
+@media (max-width: 700px) {
+  .cookie-banner {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cookie-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cookie-buttons .btn {
+    justify-content: center;
+  }
+}
+  
+  
 </style>
 </head>
 <body>
@@ -577,6 +650,51 @@ document.querySelectorAll(".reveal").forEach((el, i) => {
   el.style.transitionDelay = (Math.min(i % 3, 2) * 0.08) + "s";
   io.observe(el);
 });
+
+
+
+/* Cookie consent */
+const COOKIE_CONSENT_KEY = "analytics_consent_v1";
+
+const cookieBanner = document.getElementById("cookie-banner");
+const acceptCookies = document.getElementById("accept-cookies");
+const rejectCookies = document.getElementById("reject-cookies");
+
+function updateAnalyticsConsent(value) {
+  gtag("consent", "update", {
+    analytics_storage: value,
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied"
+  });
+}
+
+function saveCookieChoice(choice) {
+  localStorage.setItem(COOKIE_CONSENT_KEY, choice);
+  cookieBanner.hidden = true;
+}
+
+const savedCookieChoice = localStorage.getItem(COOKIE_CONSENT_KEY);
+
+if (savedCookieChoice === "accepted") {
+  updateAnalyticsConsent("granted");
+} else if (savedCookieChoice === "rejected") {
+  updateAnalyticsConsent("denied");
+} else {
+  cookieBanner.hidden = false;
+}
+
+acceptCookies.addEventListener("click", () => {
+  updateAnalyticsConsent("granted");
+  saveCookieChoice("accepted");
+});
+
+rejectCookies.addEventListener("click", () => {
+  updateAnalyticsConsent("denied");
+  saveCookieChoice("rejected");
+});
+
+  
 </script>
 
 
