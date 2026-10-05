@@ -1,4 +1,3 @@
-
 /* =========================================================
    ART OF FITNESS — STRATOS DIGITAL BUSINESS CARD
    ========================================================= */
@@ -10,6 +9,8 @@ const CONFIG = {
 
   phone: '+306988411924',
   phoneDisplay: '+30 698 841 1924',
+
+  email: 'stratspap0@gmail.com',
 
   website: 'https://www.artoffitness.gr/',
   whatsapp: '306988411924',
@@ -90,6 +91,14 @@ function initCard() {
   setHref(
     '#smsAction',
     `sms:${CONFIG.phone}`
+  );
+
+
+  /* Email */
+
+  setHref(
+    '#emailAction',
+    `mailto:${CONFIG.email}`
   );
 
 
