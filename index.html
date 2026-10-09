@@ -41,8 +41,8 @@
   ║  SETUP NOTES                                                     ║
   ║  1. WHATSAPP: change WHATSAPP_NUMBER in the <script> below.      ║
   ║  2. CALENDLY: replace CALENDLY_URL with your booking link.       ║
-  ║  3. EMAIL FORM: replace the form action with your MailerLite     ║
-  ║     (or similar) embed — search "LEAD MAGNET FORM".              ║
+  ║  3. MAILERLITE: popup button uses form ID 1ufsXY.               ║
+  ║     Universal script is loaded once in <head>.                 ║
   ║  4. PHOTOS: search "ΦΩΤΟ:" comments and replace placeholders.    ║
   ║  5. TESTIMONIALS: fill the slots — search "TESTIMONIAL".         ║
   ╚══════════════════════════════════════════════════════════════════╝
@@ -180,14 +180,13 @@ img.avatar{object-fit:cover}
 .cred .accent{margin-right:7px}
 @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:34px}.about-grid .photo{max-width:340px}}
 
-/* LEAD MAGNET */
+/* MAILERLITE NEWSLETTER */
 .magnet{background:linear-gradient(150deg,var(--surface-2),var(--bg-2));border:1px solid var(--accent-deep);border-radius:24px;padding:56px 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
 .magnet h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:900;text-transform:uppercase}
 .magnet p{color:var(--muted);margin-top:14px;font-family:'Spectral',serif;font-size:1.12rem}
-.magnet form{display:flex;gap:12px;flex-wrap:wrap}
-.magnet input{flex:1;min-width:220px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:15px 22px;color:var(--text);font-family:'Manrope';font-size:.95rem}
-.magnet input:focus{outline:none;border-color:var(--accent)}
-@media(max-width:820px){.magnet{grid-template-columns:1fr;padding:44px 30px}}
+.magnet-action{display:flex;align-items:center;justify-content:center}
+.magnet-action .btn{justify-content:center;text-align:center}
+@media(max-width:820px){.magnet{grid-template-columns:1fr;padding:44px 30px}.magnet-action{justify-content:flex-start}}
 
 .cta{background:linear-gradient(150deg,var(--surface-2),var(--bg-2));border:1px solid var(--line);border-radius:24px;padding:64px 48px;text-align:center;position:relative;overflow:hidden}
 .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% -20%,rgba(181,242,60,.16),transparent 65%)}
@@ -282,6 +281,15 @@ footer{border-top:1px solid var(--line);padding:46px 0 56px;color:var(--muted-2)
   
   
 </style>
+<!-- MailerLite Universal -->
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '23592');
+</script>
+<!-- End MailerLite Universal -->
 </head>
 <body>
 
@@ -309,7 +317,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 56px;color:var(--muted-2)
       <p class="hero-line">No gym required. No generic workouts. A structured, measurable method that ends laptop hunch, neck and back pain — and gets the weight moving — wherever in the world you happen to be working from.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" data-cal href="#">Book a Posture Assessment Call</a>
-        <a class="btn btn-ghost" href="#magnet">Get the Free Nomad Posture Toolkit</a>
+        <a class="btn btn-ghost" href="#magnet">Get Free Posture Tips</a>
       </div>
       <div class="trust">
         <div><b>10+</b><small>Years coaching</small></div>
@@ -582,20 +590,19 @@ footer{border-top:1px solid var(--line);padding:46px 0 56px;color:var(--muted-2)
   </div>
 </section>
 
-<!-- ==== LEAD MAGNET ==== -->
+<!-- ==== MAILERLITE NEWSLETTER ==== -->
 <section id="magnet">
   <div class="wrap reveal">
     <div class="magnet">
       <div>
-        <span class="eyebrow">Free download</span>
-        <h2>The Nomad Posture Toolkit</h2>
-        <p>Fix your setup in any Airbnb, café or hotel room in under 5 minutes — plus the 3 daily moves that undo laptop hunch. Free, straight to your inbox.</p>
+        <span class="eyebrow">Free newsletter</span>
+        <h2>Posture Tips for Remote Workers</h2>
+        <p>Simple posture, movement and workspace tips for people who work from anywhere. Get them straight to your inbox.</p>
       </div>
-      <!-- LEAD MAGNET FORM: replace action with your MailerLite/ConvertKit endpoint -->
-      <form action="#" method="post">
-        <input type="email" name="email" placeholder="Your best email" required />
-        <button class="btn btn-primary" type="submit">Send Me the Toolkit</button>
-      </form>
+      <div class="magnet-action">
+        <!-- MailerLite pop-up form opens when this button is clicked. -->
+        <button type="button" class="btn btn-primary ml-onclick-form" onclick="ml('show', '1ufsXY', true)">Get Free Posture Tips</button>
+      </div>
     </div>
   </div>
 </section>
